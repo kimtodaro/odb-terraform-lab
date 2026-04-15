@@ -51,14 +51,14 @@ name_suffixes = {
 }
 
 location = "westus2"
-timezone = "Central Standard Time"
+timezone = "Eastern Standard Time"
 #CHANGEME
-subscription_id = "42a3c96e-9249-422e-acbd-ea75547850fe"
+subscription_id = "2a01f1d8-526d-49c3-8ea4-512bb8e0a586"
 
 default_tags = {
     environment = "nonprod"
     #CHANGEME
-    repo = "https://github.com/lspiehler/epic-terraform-lab.git"
+    repo = "https://github.com/kimtodaro/epic-terraform-lab.git"
     application = "epic"
 }
 
@@ -268,14 +268,14 @@ networks = {
 storage_accounts = {
     "diagsa" = {
         #CHANGEME
-        name = "sapphdiaglyas"
+        name = "sapphdiagkim"
         resource_group = "hsw"
         public_network_access_enabled = true
         shared_access_key_enabled = false
     }
     terraform = {
         #CHANGEME
-        name = "saterraformlyas"
+        name = "saterraformkim"
         resource_group = "terraform"
         existing = true
         shares = {
@@ -298,13 +298,13 @@ windows_vms = {
     hsw = {
         ##Hyperspace Web Servers##
         names = [
-            # "azwu2nhsw001"
+             "azwu2nhsw001"
             # "azwu2nhsw002"
         ] 
         size = "Standard_D2as_v6"
         license_type = "Windows_Server"
         # virtual_machine_scale_set = "hsw"
-        zone = "2"
+        zone = "1"
         resource_group = "hsw"
         nics = {
             primary = {
@@ -367,12 +367,13 @@ linux_vms = {
     ODBTST = {
         size = "Standard_D2as_v6"
         names = [
-            "ODBTST"
+            "ODBTST",
+            "ODBPRD"
         ]
-        zone = 2
+        zone = 1
         admin_ssh_key = {
             #CHANGEME
-            public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCSRFZYxq5DuQrTGOPOyCyMvqC0bmMF13GUyy7+lfD21XOxcxSmKax8eX5Heuo301TCgDxM+DAG7sVFOhfrqGpsYI7LcFcVJwGZZPqsfM5TnVwxtDEbOGqNdOTtKnaoE7EuO59Ug7KptvZyMzhRiMLY6b96UOONQqNwvRYlohldZeCC2zeABqyRHSjHSITdT/7wWJJ7tASy8bS+ek5I8S72clcJ0xDliSwRvIs4TscaijnlkAvjvA1mYXm4psPKSCeeGkIdT2zo9DQbfyWgubylR49vWzqtDgvUANRWLvjZpdNk6fXIMDuGWF/G500EFquXUBOBXWY+qMVofRw+lzeN"
+            public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBnbZ1faVNOcrGRK4ikxc0rZ5wj5NpFTymgso3YwmFtuOyR15T6YuHH/XtCqJNsGbv/gy/ePFL0WEQBAud0aC8Id1Mzu8Oj5DaXLeyWtGJNSOnn6w2f0mbf3k1u+09lzihoeL5dC/GiaSiRHZlUo8mcBN6PBUXvN5mtoHXKUC34jliqlvNsCFjeazix7N6syUKnPFEiMFG/nfqCcgXAe62sX0UZNP+KrGN2jjMkCp1hrB9wia2zwPl1ZmMHf1qDcMNptm+i0Bno/59zAYYCNZKxiKhqHYeEeHLpE1mUrUEL23zbQkLiN11xQj5w/m2cS2fMaatNk2EhchwYL6JOmi7"
         }
         secure_boot_enabled = false
         disable_password_authentication = false
@@ -420,7 +421,7 @@ linux_vms = {
 #         ]
 #         zone = 2
 #         admin_ssh_key = {
-#             public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCSRFZYxq5DuQrTGOPOyCyMvqC0bmMF13GUyy7+lfD21XOxcxSmKax8eX5Heuo301TCgDxM+DAG7sVFOhfrqGpsYI7LcFcVJwGZZPqsfM5TnVwxtDEbOGqNdOTtKnaoE7EuO59Ug7KptvZyMzhRiMLY6b96UOONQqNwvRYlohldZeCC2zeABqyRHSjHSITdT/7wWJJ7tASy8bS+ek5I8S72clcJ0xDliSwRvIs4TscaijnlkAvjvA1mYXm4psPKSCeeGkIdT2zo9DQbfyWgubylR49vWzqtDgvUANRWLvjZpdNk6fXIMDuGWF/G500EFquXUBOBXWY+qMVofRw+lzeN"
+#             public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBnbZ1faVNOcrGRK4ikxc0rZ5wj5NpFTymgso3YwmFtuOyR15T6YuHH/XtCqJNsGbv/gy/ePFL0WEQBAud0aC8Id1Mzu8Oj5DaXLeyWtGJNSOnn6w2f0mbf3k1u+09lzihoeL5dC/GiaSiRHZlUo8mcBN6PBUXvN5mtoHXKUC34jliqlvNsCFjeazix7N6syUKnPFEiMFG/nfqCcgXAe62sX0UZNP+KrGN2jjMkCp1hrB9wia2zwPl1ZmMHf1qDcMNptm+i0Bno/59zAYYCNZKxiKhqHYeEeHLpE1mUrUEL23zbQkLiN11xQj5w/m2cS2fMaatNk2EhchwYL6JOmi7"
 #         }
 #         secure_boot_enabled = false
 #         disable_password_authentication = false
